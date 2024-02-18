@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500&display=swap" rel="stylesheet">
+    <title>AutoPart | Pièces automobiles de qualité</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Auto<span class="title-color-red">Part</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./ventes.html">Ventes</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catalogue</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="./404.html">Pièces automobiles</a>
+                  <a class="dropdown-item" href="./404.html">Accessoires & Entretien</a>
+                  <a class="dropdown-item" href="./404.html">Equipements</a>
+                  <a class="dropdown-item" href="./404.html">Outillage</a>
+                  <a class="dropdown-item" href="./404.html">Lubrifiants & Liquides</a>
+                  <a class="dropdown-item" href="./404.html">Peintures</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./404.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="=./404.html">Qui sommes-nous ?</a>
+              </li>
+            </ul>
+            <form class="d-flex col-lg-5 col-sm-12 col-xl-5">
+              <input class="form-control me-sm-2" type="search" placeholder="Que recherchez vous ?">
+              <button class="btn background-color-red my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <section class="h-100 h-custom" style="background-color: #EDEDED;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h5 class="mb-3 display-6">Génerer une facture</h5>
+                                    <hr>
+                                    <div class="client">
+                                        <p class="lead">
+                                            Informations client (facultatif si existant)
+                                        </p>
+                                        <form id="vente" action="">
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <label for="inputNom" class="form-label">Nom</label>
+                                                <input type="text" class="form-control" id="inputNom" placeholder="DUPOND" minlength="4" maxlength="15" size="15">
+                                            </div>
+                                            <div class="col">
+                                                <label for="inputPrénom" class="form-label">Prénom</label>
+                                                <input type="text" class="form-control" id="inputPrénom" placeholder="Jean" minlength="4" maxlength="15" size="15">
+                                            </div>
+                                            <div class="col mb-3">
+                                                <label for="inputTéléphone" class="form-label">Téléphone</label>
+                                                <input type="tel" class="form-control" id="inputTéléphone" placeholder="0689523641">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="inputEmail4" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="inputEmail4" placeholder="exemple@gmail.com">
+                                              </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr>
+                                    <table id="myTable" class="display">
+                                        <thead>
+                                            <tr>
+                                                <th>Description</th>
+                                                <th>Type</th>
+                                                <th>Quantité</th>
+                                                <th>Prix Unitaire HT</th>
+                                                <th>Total HT</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Pneu Michelin Pilot Sport 4</td>
+                                                <td>Pneus</td>
+                                                <td>2</td>
+                                                <td>150 €</td>
+                                                <td>300 €</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Batterie Bosch S4</td>
+                                                <td>Batterie</td>
+                                                <td>1</td>
+                                                <td>100e</td>
+                                                <td>100€</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Filtre à huile Purflux L342</td>
+                                                <td>Filtres</td>
+                                                <td>3</td>
+                                                <td>15€</td>
+                                                <td>45€</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Plaquettes de frein Brembo</td>
+                                                <td>Freins</td>
+                                                <td>1</td>
+                                                <td>50€</td>
+                                                <td>50€</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="col-lg-4">
+                                    <div class="card background-color-red text-white rounded-3">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                                <h5 id="numero-commande" class="mb-0"></h5>
+                                                <img src="https://media.istockphoto.com/id/1353444509/fr/photo/jeune-latin-travaillant-dans-une-quincaillerie.jpg?s=612x612&w=0&k=20&c=SwaXLqDMrqV7AOI8pg734scBhhIfVHQ4jX-dzEakFmI="
+                                                    class="rounded-3 " style="width: 10rem;">
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <fieldset>
+                                                  <label class="form-label mt-4" for="readOnlyInput">Vendeur</label>
+                                                  <input class="form-control" id="readOnlyInput" type="text" placeholder="Michel Dupont" readonly="readonly">
+                                                </fieldset>
+                                              </div>
+                                              
+                                              <div class="form-group mb-3">
+                                                  <fieldset>
+                                                      <label for="start">Date de début :</label>
+                                                      <input class="form-control" type="date" id="start" name="trip-start" value="" readonly="readonly" required/>
+                                                  </fieldset>
+                                              </div>
+                                              
+                                            <div class="form-group mb-3">
+                                                <label for="exampleDataList" class="form-label">Choisisez un client</label>
+                                                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Rechercher...">
+                                                    <datalist id="datalistOptions">
+                                                        <option value="Jean Dupont">
+                                                        <option value="Marie Martin">
+                                                        <option value="Pierre Dubois">
+                                                        <option value="Sophie Bernard">
+                                                        <option value="Jacques Lefevre">
+                                                    </datalist>
+                                            </div>
+
+                                            <hr class="my-4">
+
+                                            <div class="d-flex justify-content-between">
+                                                <p class="mb-2">Prix HT</p>
+                                                <p class="mb-2">495 €</p>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between">
+                                                <p class="mb-2">Total TVA</p>
+                                                <p class="mb-2">99 €</p>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-4">
+                                                <p class="mb-2">Total TTC</p>
+                                                <p class="mb-2">594 €</p>
+                                            </div>
+
+                                            <center><button type="submit" class="btn btn-dark btn-block btn-lg">
+                                                Générer la facture</button></center>
+                                          </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="black-color text-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <p>
+                Bienvenue sur AutoPart, votre destination en ligne pour tous vos besoins en pièces automobiles. Que vous recherchiez des pneus de haute performance, des batteries fiables, des filtres de qualité ou des pièces de freinage de premier ordre, nous avons ce qu'il vous faut. Notre large sélection de pièces de qualité garantit que vous pouvez maintenir et améliorer votre véhicule en toute confiance.
+              </p>
+            </div>
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="title-color-red text-uppercase">Nos produits</h5>
+      
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="./404.html" class="text-decoration-none text-white">Pièces automobiles</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-decoration-none text-white">Accessoires & Entretien</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-decoration-none text-white">Equipements</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-decoration-none text-white">Outillage</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-decoration-none text-white">Lubrifiants & Liquides</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-decoration-none text-white">Peintures</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="title-color-red text-uppercase mb-0">Nous connaître</h5>
+      
+              <ul class="list-unstyled">
+                <li>
+                  <a href="./404.html" class="text-white text-decoration-none">Qui sommes-nous ?</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-white text-decoration-none">Contact</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-white text-decoration-none">Mentions Légales</a>
+                </li>
+                <li>
+                  <a href="./404.html" class="text-white text-decoration-none">Conditions d'utilisations</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2024 Copyright:
+          <a class="text-white" href="./ventes.html">AutoPart</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+</body>
+
+</html>
